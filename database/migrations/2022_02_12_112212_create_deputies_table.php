@@ -13,15 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('absences', function (Blueprint $table) {
+        Schema::create('deputies', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('reason_id')->constrained();
-            $table->foreignId('deputy_id')->constrained();
-
-            $table->date('start');
-            $table->date('end');
+            $table->string('name');
 
             $table->timestamps();
         });
@@ -34,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('absences');
+        Schema::dropIfExists('deputies');
     }
 };

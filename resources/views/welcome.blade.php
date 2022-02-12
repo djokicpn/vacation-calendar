@@ -39,7 +39,7 @@
                             <td>
                                 @foreach ( $user->absence as $absence )
                                     @if ($i>= Carbon\Carbon::parse($absence->start)->day && $i<=Carbon\Carbon::parse($absence->end)->day)
-                                        <span>{{$absence->reason->symbol}}</span>
+                                        <span>{{$absence->reason->symbol}} - {{ $absence->deputy->name }}</span>
                                     @endif
                                 @endforeach
                             </td>

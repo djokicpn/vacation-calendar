@@ -19,16 +19,9 @@ class Absence extends Model
     public function reason() {
         return $this->belongsTo(Reason::class);
     }
-    protected function startDay(): Attribute
-    {
-        return new Attribute(
-            get: fn ($value) => Carbon::parse($this->start)->day,
-        );
+
+    public function deputy() {
+        return $this->belongsTo(Deputy::class);
     }
-    protected function endDay(): Attribute
-    {
-        return new Attribute(
-            get: fn ($value) => Carbon::parse($this->end)->day,
-        );
-    }
+
 }
